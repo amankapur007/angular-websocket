@@ -7,8 +7,8 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "nodemon index.js --exec babel-node -e js",
-    "build": "ng build --prod",
+    "start": "npm run build && nodemon index.js --exec babel-node -e js",
+    "build": "ng build --aot --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
