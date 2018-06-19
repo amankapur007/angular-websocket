@@ -2,6 +2,9 @@
   "name": "connectweb",
   "version": "0.0.0",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/amankapur007/angular-websocket.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "nodemon ./index.js --exec babel-node -e js",
