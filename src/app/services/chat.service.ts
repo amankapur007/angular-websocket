@@ -20,20 +20,14 @@ export class ChatService {
     
     if (this.protocol != undefined) {
       this.url += this.protocol + '//'
-    } else {
-      this.url += 'http://'
     }
-
+    
     if (this.host != undefined) {
       this.url += this.host;
-    } else {
-      this.url += 'localhost';
     }
 
-    if (this.port != undefined) {
+    if (this.port != undefined && this.port != null && this.port.trim() != '') {
       this.url += ':' + this.port;
-    } else {
-      this.url += ':8080';
     }
 
     console.log(this.url);
