@@ -1,0 +1,9 @@
+<div id="chat" class="container">
+    <div id="chat-window" style="margin-top: 2%">
+        <div id="output" #output style="margin: 1%"></div>
+        <div id="feedback" #feed style="margin: 1%"></div>
+    </div>
+    <input id="sender" type="text" [(ngModel)]="sender" placeholder="Sender" required/>
+    <input id="message" type="text" [(ngModel)]="message" (keypress)="typing()" placeholder="Message" />
+    <button id="send" (click)="send()">Send</button>
+</div>
