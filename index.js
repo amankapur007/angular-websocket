@@ -14,14 +14,12 @@ app.use(express.static(__dirname+"/dist"));
 var io = socket(server);
 
 io.on('connection',(socket)=>{
-    console.log(`socket connection made ${socket.id}`)
     socket.on('chat',(data)=>{
         console.log(data)
         io.sockets.emit('chat',data);
     })
 
     socket.on('chattyping',(data)=>{
-        console.log("typimg",data)
         socket.broadcast.emit('chattyping',data);
     })
 })
