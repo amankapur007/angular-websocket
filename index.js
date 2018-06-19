@@ -5,11 +5,15 @@ const PORT = 8080;
 
 const app = express();
 
-const server = app.listen(PORT,()=>{
-    console.log(`Web server listening in ${PORT}`);
-});
+const server = app.listen(process.env.PORT || 8080);
+
+console.log('listening');
 
 app.use(express.static(__dirname+"/dist"));
+
+app.get('/*',(req, res)=>{
+    res.sendFile(path.join(__dirname+'/dist/index.html'));
+});
 
 var io = socket(server);
 
@@ -23,6 +27,3 @@ io.on('connection',(socket)=>{
         socket.broadcast.emit('chattyping',data);
     })
 })
-app.get('/*',(req, res)=>{
-    res.sendFile(path.join(__dirname+'/dist/index.html'));
-});
